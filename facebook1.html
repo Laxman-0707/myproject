@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook - Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #e9ebee 0%, #d0e2ff 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 60px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 2.2em;
+            font-family: 'Segoe UI', sans-serif;
+            color: #1877f2;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1em;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            background: #1877f2;
+            color: #fff;
+            transition: background 0.2s;
+        }
+        .btn:hover {
+            background: #145db2;
+        }
+        .footer {
+            margin-top: 32px;
+            color: #888;
+            font-size: 0.95em;
+        }
+        .divider {
+            margin: 24px 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Facebook</div>
+        <p>Connect with friends and the world around you on Facebook.</p>
+        <form>
+            <div class="form-group">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="login-email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="login-password" required>
+            </div>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <div class="divider"></div>
+        <form>
+            <div class="form-group">
+                <label for="register-name">Name</label>
+                <input type="text" id="register-name" name="register-name" required>
+            </div>
+            <div class="form-group">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" name="register-email" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password">Password</label>
+                <input type="password" id="register-password" name="register-password" required>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+    <div class="footer">
+        &copy; 2025 Facebook. All rights reserved.
+    </div>
+</body>
+</html>
