@@ -1,149 +1,150 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Instagram Login & Sign Up</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Pacifico|Roboto:400,700&display=swap" rel="stylesheet">
+    <title>Instagram Login & Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
-            background: linear-gradient(135deg, #fbb034 0%, #ffdd00 50%, #c1dfc4 100%);
-            /* Add cloud SVG background using pseudo element */
-            position: relative;
+            background: #fafafa;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-            overflow: hidden;
-            animation: bgmove 20s linear infinite;
-        }
-        @keyframes bgmove {
-            0% {background-position: 0% 50%;}
-            100% {background-position: 100% 50%;}
-        }
-        body::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            pointer-events: none;
-            z-index: 0;
-            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><ellipse cx="150" cy="100" rx="80" ry="40" fill="white" fill-opacity="0.5"/><ellipse cx="300" cy="200" rx="120" ry="60" fill="white" fill-opacity="0.4"/><ellipse cx="500" cy="80" rx="100" ry="50" fill="white" fill-opacity="0.45"/><ellipse cx="80" cy="350" rx="100" ry="50" fill="white" fill-opacity="0.3"/><ellipse cx="600" cy="350" rx="80" ry="40" fill="white" fill-opacity="0.35"/></svg>');
-            background-repeat: no-repeat;
-            background-size: cover;
-            animation: clouds 60s linear infinite;
-        }
-        @keyframes clouds {
-            0% {background-position: left;}
-            100% {background-position: right;}
         }
         .container {
-            width: 380px;
-            margin: 60px auto;
-            background: rgba(255, 255, 255, 0.85);
+            width: 350px;
+            margin: 50px auto;
+            background: #fff;
             border: 1px solid #dbdbdb;
-            border-radius: 14px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            padding: 38px 28px;
-            position: relative;
-            z-index: 1;
-            backdrop-filter: blur(4px);
+            border-radius: 7px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 30px 40px 20px 40px;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px auto;
+            width: 120px;
+            height: 40px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png') no-repeat center/contain;
         }
         h2 {
-            font-family: 'Pacifico', cursive;
-            font-size: 2.2rem;
             text-align: center;
-            font-weight: 400;
-            color: #ff9800;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
-            text-shadow: 1px 3px 8px #c1dfc4;
+            font-weight: 600;
+            color: #262626;
+            margin-bottom: 20px;
         }
         form {
             display: flex;
             flex-direction: column;
         }
-        input[type="text"], input[type="password"], input[type="email"] {
-            font-family: 'Roboto', Arial, sans-serif;
-            padding: 12px 14px;
-            margin-bottom: 14px;
-            border: 1.5px solid #fbb034;
-            border-radius: 8px;
+        input[type="text"], input[type="email"], input[type="password"] {
+            margin-bottom: 12px;
+            padding: 10px;
+            border: 1px solid #dbdbdb;
+            border-radius: 5px;
             background: #fafafa;
-            font-size: 1rem;
-            transition: box-shadow 0.2s, border-color 0.2s;
+            font-size: 15px;
         }
-        input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
-            outline: none;
-            border-color: #3897f0;
-            box-shadow: 0 2px 12px #3897f055;
-            background: #fff8e1;
-        }
-        input[type="submit"] {
-            padding: 12px;
-            background: linear-gradient(90deg, #3897f0 60%, #ff9800 100%);
-            color: #fff;
+        button {
+            padding: 10px;
+            background: #3897f0;
             border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1.1rem;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 5px;
             cursor: pointer;
-            margin-bottom: 14px;
-            transition: background 0.25s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px #3897f044;
+            font-size: 16px;
+            margin-bottom: 10px;
         }
-        input[type="submit"]:hover {
-            background: linear-gradient(90deg, #ff9800 0%, #3897f0 100%);
-            box-shadow: 0 4px 18px #ffdd0055;
+        button:hover {
+            background: #1877f2;
         }
-        .toggle-link {
+        .switch-link {
             text-align: center;
             margin-top: 10px;
-            color: #3897f0;
-            font-weight: 500;
+            color: #00376b;
             cursor: pointer;
             text-decoration: underline;
-            font-size: 1rem;
-            letter-spacing: 0.2px;
-            transition: color 0.2s;
-        }
-        .toggle-link:hover {
-            color: #ff9800;
         }
         .error {
             color: #ed4956;
-            text-align: center;
+            font-size: 13px;
             margin-bottom: 10px;
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.4px;
+            text-align: center;
         }
-        /* Features: Add social login icons (visual only, not functional) */
-        .social-login {
-            display: flex;
-            justify-content: center;
-            gap: 18px;
-            margin-bottom: 18px;
+        @media (max-width: 400px) {
+            .container {
+                width: 95vw;
+                padding: 20px 5vw;
+            }
+            .logo {
+                width: 80px;
+                height: 30px;
+            }
         }
-        .social-icon {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #fafafa;
-            border: 1px solid #dbdbdb;
-            box-shadow: 0 1px 5px #0001;
-            cursor: pointer;
-            transition: box-shadow 0.2s, border-color 0.2s;
+    </style>
+</head>
+<body>
+    <div class="container" id="loginContainer">
+        <div class="logo"></div>
+        <h2>Login</h2>
+        <form id="loginForm" autocomplete="off">
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button type="submit">Log In</button>
+            <div class="error" id="loginError"></div>
+        </form>
+        <div class="switch-link" onclick="showRegister()">Don't have an account? Register</div>
+    </div>
+    <div class="container" id="registerContainer" style="display:none;">
+        <div class="logo"></div>
+        <h2>Register</h2>
+        <form id="registerForm" autocomplete="off">
+            <input type="text" id="regUsername" placeholder="Username" required>
+            <input type="email" id="regEmail" placeholder="Email" required>
+            <input type="password" id="regPassword" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+            <div class="error" id="registerError"></div>
+        </form>
+        <div class="switch-link" onclick="showLogin()">Already have an account? Login</div>
+    </div>
+    <script>
+        function showRegister() {
+            document.getElementById('loginContainer').style.display = 'none';
+            document.getElementById('registerContainer').style.display = 'block';
         }
-        .social-icon:hover {
-            box-shadow: 0 2px 12px #3897f055;
-            border-color: #3897f0;
+        function showLogin() {
+            document.getElementById('registerContainer').style.display = 'none';
+            document.getElementById('loginContainer').style.display = 'block';
         }
-        .social-icon img {
-            width: 22px;
-            height: 22px;
-        }
-        /* Add a little fade-in effect
+        // Dummy form handling
+        document.getElementById('loginForm').onsubmit = function(e) {
+            e.preventDefault();
+            let username = document.getElementById('loginUsername').value;
+            let password = document.getElementById('loginPassword').value;
+            // Demo validation
+            if(username === "user" && password === "pass") {
+                document.getElementById('loginError').style.color = "#3897f0";
+                document.getElementById('loginError').textContent = "Login successful!";
+            } else {
+                document.getElementById('loginError').style.color = "#ed4956";
+                document.getElementById('loginError').textContent = "Invalid username or password.";
+            }
+        };
+        document.getElementById('registerForm').onsubmit = function(e) {
+            e.preventDefault();
+            let username = document.getElementById('regUsername').value;
+            let email = document.getElementById('regEmail').value;
+            let password = document.getElementById('regPassword').value;
+            // Demo validation
+            if(username && email && password.length >= 6) {
+                document.getElementById('registerError').style.color = "#3897f0";
+                document.getElementById('registerError').textContent = "Registration successful!";
+            } else {
+                document.getElementById('registerError').style.color = "#ed4956";
+                document.getElementById('registerError').textContent = "Please fill all fields (password min 6 chars).";
+            }
+        };
+    </script>
+</body>
+</html>
